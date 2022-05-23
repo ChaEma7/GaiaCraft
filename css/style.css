@@ -1,0 +1,2189 @@
+:root {
+    --c1: #11241c;
+    --c2: #2d3f37;
+    --c3: #65736c;
+    --c4: #ced2d0;
+    --c5: #ededed;
+    --c6: #167540;
+}
+
+/* ============================================ general css ============================================ */
+
+html {
+    /*font-family: 'Caveat', cursive;*/
+    font-family: 'Open Sans', sans-serif;
+    color: var(--c1);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--c5);
+    margin: 0;
+    padding: 0;
+
+}
+
+.headerLogo {
+    height: 50px;
+}
+
+
+header {
+    background-color: var(--c5);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 76px;
+    margin: 0;
+    z-index: 99;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: var(--c1);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+ul {
+    padding-inline-start: 1em;
+}
+
+p {
+    font-size: 1em;
+}
+
+h2 {
+    font-size: 2.2em;
+    line-height: 1em;
+    text-align: center;
+    padding: 75px 0 40px 0;
+    margin: 0;
+
+}
+
+
+h6 {
+    font-size: 16px;
+    margin-bottom: -1em;
+}
+
+.hide {
+    display: none;
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 100px;
+    font-size: 16pt;
+    font-weight: 600;
+}
+
+button:hover {
+    box-shadow: 0 3px 10px var(--c6);
+}
+
+.knap1 {
+    background-color: var(--c6);
+    border: 2px solid var(--c6);
+    color: var(--c5);
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 100px;
+    font-size: 16pt;
+    font-weight: 600;
+    text-align: center;
+    padding: 7px 0 0 0;
+}
+
+.knap1:hover {
+    color: var(--c5) !important;
+    box-shadow: 0 3px 10px var(--c6);
+}
+
+
+.knap2 {
+    border: 2px solid var(--c6);
+    color: var(--c6);
+    background-color: var(--c5);
+    width: 150px;
+    height: 40px;
+    border-radius: 100px;
+    font-size: 16pt;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px 0 0 0;
+}
+
+.knap2:hover {
+    box-shadow: 0 3px 10px var(--c6);
+}
+
+#tilTop {
+    display: block;
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    bottom: 1em;
+    right: 1em;
+    color: var(--c5);
+    text-align: center;
+    background-image: url(../img/up-48.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* ============================================ NAVIGATION ============================================ */
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2em 1em;
+}
+
+
+.bar {
+    display: block;
+    z-index: 99;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    border-radius: 100px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--c6);
+}
+
+.hamburger {
+    display: block;
+    position: fixed;
+    right: 1em;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+.nav-menu {
+    position: fixed;
+    left: 100%;
+    top: 50px;
+    /*gap: 0;*/
+    flex-direction: column;
+    background-color: var(--c5);
+    width: 100%;
+    transition: 0.3s;
+}
+
+.nav-item {
+    margin: 16px 0;
+}
+
+.nav-menu.active {
+    left: 0;
+}
+
+
+#eksraNav {
+    display: none;
+}
+
+.highlight {
+    background-color: var(--c6);
+    width: 100%;
+    margin: -0.35em 0 0 -1em;
+    text-align: center;
+    padding: 0.7em 0;
+}
+
+.highlight a {
+    color: var(--c5);
+}
+
+.navOpdeler {
+    display: none;
+}
+
+
+
+/* ============================================ PAGE STYLING ============================================ */
+.page {
+    display: none;
+    /*min-heigh er screen-heigh minus højde af tab and top bar */
+    min-height: calc(100vh - 76px);
+    animation: fadeIn 0.4s;
+    /* padding bestemmer højden på tabbar and topbar */
+    padding: 76px 0em 50px 0em;
+    overflow: hidden;
+
+}
+
+/* ------------- sideskift animations ---------- */
+/* fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* ============================================ FORSIDE ============================================ */
+
+.heroFrame {
+    height: 18em;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-image: url(../img/heroMobileFrame.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.heroText {
+    display: none;
+}
+
+.fragtBanner {
+    display: block;
+    float: right;
+    z-index: 10;
+    margin: -15.2em -6.5em 0 0;
+    height: 50px;
+    width: 300px;
+    background-color: var(--c6);
+    transform: rotate(40deg);
+}
+
+.fragtBanner p {
+    text-align: center;
+    font-weight: 600;
+    color: var(--c5);
+    margin: 8px 0 0 0;
+}
+
+.lilleFragtText {
+    font-size: 12px;
+    margin: -0.3em 0 0 0 !important;
+    font-weight: 100 !important;
+}
+
+
+.holdning {
+    padding: 0 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr;
+    gap: 0px;
+    grid-template-areas:
+        "overskrift"
+        "gif"
+        "text"
+        "knapper";
+}
+
+.overskrift {
+    grid-area: overskrift;
+    width: 250px;
+    margin: auto;
+    padding: 75px 0 0 0;
+}
+
+.forsideGif {
+    grid-area: gif;
+    width: 360px;
+    align-self: center;
+    margin: -5.5em 0;
+}
+
+.text {
+    grid-area: text;
+}
+
+.knapper {
+    grid-area: knapper;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 0;
+}
+
+.bambusKasse {
+    background-image: url(../img/bambus-background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1em 0;
+    margin: 2em 0;
+}
+
+.bambusKasse h2 {
+    padding: 40px 0 40px 0;
+}
+
+.softEdgeTop {
+    width: 100%;
+    margin-top: -1em;
+}
+
+.softEdgeBottom {
+    width: 100%;
+    margin-bottom: -2em;
+}
+
+.bambusCharts {
+    margin: 0 1em;
+}
+
+.bambusCharts img {
+    display: block;
+    margin: 0 auto;
+}
+
+.bambusCharts p {
+    font-weight: 600;
+    padding: 0.5em 0 3em 0;
+}
+
+.maerker {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.maerker img {
+    width: 100px;
+    height: 100px;
+}
+
+.satifikater p {
+    font-weight: 600;
+    padding: 0.5em 0 3em 0;
+    margin: 1em 1em 1em 1em;
+}
+
+.bambusKasse .knap2 {
+    display: block;
+    margin: auto;
+    height: 80px;
+    width: 300px;
+    margin-top: -1em;
+    padding-top: 15px;
+}
+
+.produktFremvisning {
+    margin: 3em 1em;
+}
+
+.produktFremvisning h2 {
+    padding: 25px 0 40px 0;
+}
+
+.fremvisningsGrid figure {
+    width: 100%;
+    height: 200px;
+    display: block;
+    box-shadow: 5px 5px 10px var(--c4);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-block-start: 1em;
+    margin-block-end: 2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.figcaption-fremvisning {
+    color: var(--c5);
+    line-height: 1.2em;
+    height: 50px;
+    position: relative;
+    top: 134px;
+    padding: 1em 1em 0em 0.5em;
+    background-image: linear-gradient(#2d3f3700, #2d3f37b6);
+
+}
+
+.fig1 {
+    background-image: url(../img/tedBordFremvisning.jpg);
+}
+
+.fig2 {
+    background-image: url(../img/lilleStanderFremvisning.jpg);
+}
+
+.fig3 {
+    background-image: url(../img/storStanderFremvisning.jpg);
+}
+
+.fig4 {
+    background-image: url(../img/blandetFremvisning.jpg);
+}
+
+.samarbejde {
+    max-width: 1350px;
+    margin: auto;
+    padding: 0 1em;
+}
+
+.reCollectorBilleder {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.reLogo {
+    display: block;
+    margin: 2em auto 1em auto;
+    width: 100px;
+    height: 100px;
+
+}
+
+.samarbejde .knap1 {
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.ReProduktBilleder {
+    width: 170px;
+}
+
+.anmeldelser {
+    display: block;
+    max-width: 1350px;
+    margin: auto;
+    padding: 0 1em;
+}
+
+.instaFeed {
+    margin: 1em;
+    max-width: 1350px;
+    margin: 2em auto 0 auto;
+}
+
+.lang-knap {
+    width: 100%;
+}
+
+/* instergram button */
+#eapps-instagram-feed-1 a.eapps-instagram-feed-header-follow-button,
+#eapps-instagram-feed-1 a.eapps-instagram-feed-header-follow-button:hover {
+    border-radius: 100px;
+    border: 2px solid var(--c6);
+}
+
+
+/* ============================================ Design ============================================ */
+
+/* hero section */
+.storHeroVideoDesign {
+    display: none;
+}
+
+.lilleHeroVideoDesign {
+    width: 100%;
+}
+
+.herotextUnderside {
+    display: block;
+    position: absolute;
+    z-index: 9;
+    top: 130px;
+    width: 100%;
+    text-align: center;
+}
+
+.herotextUnderside h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 3em;
+    color: var(--c5);
+    margin: 0;
+}
+
+.herotextUnderside p {
+    color: var(--c5);
+    margin: 0;
+}
+
+/* Få naturen med hjem section */
+
+.tagNaturenMedHjem {
+    padding: 0 1em;
+}
+
+.rundtBillede {
+    width: 60%;
+    display: block;
+    margin: 2em auto;
+}
+
+/* ergonomi section */
+
+.ergonomi {
+    padding: 0 1em;
+}
+
+.dont {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    display: none;
+}
+
+.ergonomiIcons {
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+.tips {
+    padding: 2em 0 1em 0;
+}
+
+
+
+/* Vælg et design sektion */
+.optimaleStander {
+    padding: 0 1em;
+}
+
+
+.design-menu {
+    text-align: center;
+    display: flex;
+    margin: 3em 1em;
+    justify-content: center;
+    gap: 2em;
+}
+
+.design-menu h6 {
+    font-size: 1em;
+    margin: 0.5em 0 1em 0;
+}
+
+/* design knap med gif lille stander */
+.lille-stander-btn {
+    background-image: url(../img/lilleStanderGifThombnail.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--c6);
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    box-shadow: 5px 5px 10px var(--c3);
+}
+
+.lille-stander-btn:hover {
+    background-image: url(../img/lilleStanderVideo.gif);
+    background-color: var(--c5);
+    border: solid 2px var(--c6);
+}
+
+#lille-stander-content {
+    display: none;
+}
+
+
+/* design knap med gif stor stander */
+.stor-stander-btn {
+    background-image: url(../img/storStanderGifThombnail.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--c6);
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    box-shadow: 5px 5px 10px var(--c3);
+}
+
+.stor-stander-btn:hover {
+    background-image: url(../img/storStanderVideo.gif);
+    background-color: var(--c5);
+    border: solid 2px var(--c6);
+}
+
+
+#stor-stander-content {
+    display: none;
+}
+
+/* stander content */
+.stander-kasse {
+    background-image: url(../img/bambus-background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1em 0em;
+    margin-top: -4em;
+}
+
+#luk-stander-content {
+    width: 30px;
+    height: 30px;
+    margin-bottom: -30px;
+    background-color: transparent;
+    border: 2px solid var(--c6);
+    color: var(--c6);
+    position: relative;
+    top: -25px;
+    right: 1em;
+    float: right;
+}
+
+#luk-content {
+    width: 30px;
+    height: 30px;
+    margin-bottom: -30px;
+    background-color: transparent;
+    border: 2px solid var(--c6);
+    color: var(--c6);
+    position: relative;
+    top: -25px;
+    right: 1em;
+    float: right;
+}
+
+.standerText {
+    padding: 0 1em;
+}
+
+.standerText h4 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+ol {
+    padding: 0;
+    list-style-type: disc;
+}
+
+.standerText li {
+    padding: 0.5em 0;
+    list-style-type: disc;
+    margin-left: 1.1em;
+}
+
+.stander-billeder img {
+    display: block;
+    margin: 1.5em auto;
+}
+
+.stander-videoer {
+    padding: 1em;
+}
+
+.stander-videoer video {
+    width: 100%;
+    margin: 1em 0;
+}
+
+.stander-videoer img {
+    width: 100%;
+    margin: 1em 0;
+}
+
+.knapKnap {
+    width: 300px;
+    display: block;
+    margin: 1em auto 2em auto;
+    color: var(--c5);
+}
+
+.knapKnap:hover {
+    box-shadow: 0 3px 10px var(--c6);
+    color: var(--c5) !important;
+    background-color: var(--c6);
+}
+
+.inspirationen {
+    display: none;
+}
+
+/* farver section */
+
+.farver {
+    padding: 0 1em;
+}
+
+.farver .stander-billeder {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.farver img {
+    width: 150px;
+}
+
+/* ============================================ Kontakt ============================================ */
+
+.historieBilleder {
+    width: 100%;
+    margin-top: 1.5em;
+}
+
+.kontakt-content {
+    padding: 0 1em;
+}
+
+.mvv h2 {
+    padding: 75px 0 20px 0;
+}
+
+.mvv p {
+    margin: 0;
+}
+
+.kontakt-info {
+    text-align: center;
+    margin-top: 75px;
+}
+
+.kontakt-info h2 {
+    padding: 1em 0 0 0;
+}
+
+.info {
+    margin: 0;
+}
+
+.telefonMail {
+    color: var(--c6);
+    text-decoration: underline;
+}
+
+/* ============================================ 404 ============================================ */
+
+.historienBag {
+    padding: 0 1em;
+}
+
+.error-404 {
+    font-family: 'Caveat', cursive;
+    font-size: 3em;
+    text-align: center;
+    line-height: 0.8em;
+}
+
+#error p {
+    text-align: center;
+    padding: 0 1em;
+}
+
+#error img {
+    width: 100%;
+}
+
+#error button {
+    display: block;
+    margin: auto;
+}
+
+
+/* ============================================ Footer ============================================ */
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "logos"
+        "mere"
+        "adresse";
+}
+
+.mereInfo {
+    display: block;
+    margin: 2em auto;
+    width: 290px;
+    grid-area: mere;
+    text-align: center;
+}
+
+.mereInfo ul li a {
+    text-decoration: underline;
+    line-height: 1.7em;
+}
+
+.mereInfo ul {
+    padding-inline-start: 0;
+}
+
+.mereInfo ul li a:hover {
+    color: var(--c6);
+}
+
+.footerSocials {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.footer-FB {
+    height: 33px;
+    width: 33px;
+    margin: 0 0.5em;
+    background-image: url(../img/FB-gray.png);
+    background-size: contain;
+}
+
+.footer-FB:hover {
+    background-image: url(../img/FB-green.png);
+}
+
+.footer-IG {
+    height: 30px;
+    width: 30px;
+    margin: 0 0.5em;
+    background-image: url(../img/IG-gray.png);
+    background-size: contain;
+}
+
+.footer-IG:hover {
+    background-image: url(../img/IG-green.png);
+}
+
+.footer-IL {
+    height: 30px;
+    width: 30px;
+    margin: 0 0.5em;
+    background-image: url(../img/li-gray.png);
+    background-size: contain;
+}
+
+.footer-IL:hover {
+    background-image: url(../img/li-green.png);
+}
+
+.footerLogos aside {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 290px;
+    margin: 1em auto;
+    grid-area: logos;
+}
+
+.footerLogos aside img {
+    width: 50px;
+    padding: 0 1em;
+}
+
+.betaling {
+    display: block;
+    margin: auto;
+}
+
+.footerLogo {
+    display: block;
+    margin: 2em auto 1.2em auto;
+    width: 290px;
+    align-items: center;
+}
+
+.footerAdress {
+    margin: 0 auto;
+    padding: 0 0 1em 0;
+    width: 290px;
+    grid-area: adresse;
+    text-align: center;
+}
+
+.footerAdress a {
+    text-decoration: underline;
+}
+
+.footerAdress a:hover {
+    color: var(--c6);
+}
+
+
+
+
+
+/* ============================================ RESPONSIVENESS ============================================ */
+/* ============================================ RESPONSIVENESS ============================================ */
+/* ============================================ RESPONSIVENESS ============================================ */
+
+/* ------------------------- Tablet ------------------------- */
+
+@media screen and (max-width: 1050px) and (min-width: 539px) {
+
+    h2 {
+        text-align: left;
+    }
+
+    /* ------------------------- FORSIDE ------------------------- */
+
+    .heroFrame {
+        height: 15em;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background-image: url(../img/heroDesktopFrame.gif);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .fragtBanner {
+        margin: -12em -8.5em 0 0;
+        height: 70px;
+        width: 400px;
+    }
+
+    .fragtBanner p {
+        font-size: 16pt;
+    }
+
+    .lilleFragtText {
+        font-size: 16px !important;
+        margin: -0.2em 0 0 0 !important;
+        font-weight: 100 !important;
+    }
+
+    .heroText {
+        display: block;
+        z-index: 9;
+        position: absolute;
+        top: 3.5em;
+        left: 1em;
+        padding: 0 1em;
+        width: 370px;
+    }
+
+    .heroText h1 {
+        font-size: 3em;
+        text-align: left;
+        color: var(--c5);
+        font-family: 'Caveat', cursive;
+    }
+
+    .heroText p {
+        color: var(--c5);
+        font-size: 12pt;
+        margin-top: -3em;
+    }
+
+    .herotextUnderside {
+        display: none;
+    }
+
+    .holdning {
+        padding: 0 1em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.1fr 2fr 0.1fr;
+        gap: 0px;
+        grid-template-areas:
+            "gif overskrift"
+            "gif text"
+            "gif knapper";
+    }
+
+    .overskrift {
+        grid-area: overskrift;
+        margin-top: 1em;
+        margin: 2.5em 0 0 -1em;
+        font-size: 2em;
+        width: 400px;
+
+    }
+
+    .forsideGif {
+        grid-area: gif;
+        width: 480px;
+        align-self: center;
+        margin: 0 0 0 -5em;
+    }
+
+    .text {
+        grid-area: text;
+        margin: 2em 0 0 -2em;
+    }
+
+    .knapper {
+        grid-area: knapper;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1em;
+        padding: 1em 1em;
+        margin-top: -100px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .softEdgeTop {
+        height: 100px;
+    }
+
+    .softEdgeBottom {
+        height: 100px;
+    }
+
+
+    .bambusCharts img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .bambusCharts p {
+        width: 400px;
+        display: block;
+        margin: 1em auto;
+    }
+
+    .satifikater p {
+        width: 400px;
+        display: block;
+        margin: 1em auto;
+    }
+
+    .maerker {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .maerker img {
+        display: block;
+        margin: auto;
+    }
+
+    .fremvisningsGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "fig1 fig1 fig2"
+            "fig3 fig4 fig4";
+        gap: 1em;
+        padding: 2em;
+    }
+
+    .billede1 {
+        grid-area: fig3;
+    }
+
+    .billede2 {
+        grid-area: fig1;
+    }
+
+    .billede3 {
+        grid-area: fig2;
+    }
+
+    .billede4 {
+        grid-area: fig4;
+    }
+
+    .fremvisningsGrid figure {
+        height: 300px;
+        margin: 0;
+        box-shadow: 3px 3px 10px var(--c3);
+    }
+
+    .figcaption-fremvisning {
+        top: 199px;
+        font-size: 1.3em;
+        height: 50px;
+        padding: 2em 1em 0.5em 0.5em;
+        background-image: linear-gradient(#2d3f3700, #2d3f37ea);
+    }
+
+    .samarbejde p {
+        width: 400px;
+        margin: auto;
+    }
+
+    .reCollectorBilleder {
+        width: 400px;
+        margin: auto;
+    }
+
+    .lang-knap {
+        width: 50%;
+    }
+
+    .anmeldelser {
+        padding: 0 3em;
+    }
+
+    /* ============================================ Design ============================================ */
+
+    .storHeroVideoDesign {
+        display: block;
+        width: 100%;
+    }
+
+    .lilleHeroVideoDesign {
+        display: none;
+    }
+
+    /* Få naturen med hjem section */
+
+    .tagNaturenMedHjem {
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+        align-content: center;
+        gap: 3em;
+        width: 100%;
+        padding: 0;
+        margin: 3em auto;
+    }
+
+    .tagNaturenMedHjem aside {
+        width: 450px;
+        margin: auto 1em auto 0;
+    }
+
+    .tagNaturenMedHjem aside h2 {
+        text-align: left;
+        padding: 0;
+    }
+
+    .rundtBillede {
+        width: 250px;
+        height: 250px;
+        display: block;
+        margin: auto 0 auto 1em;
+    }
+
+    /* ergonomi section */
+
+    .ergonomi {
+        padding: 0 1em;
+    }
+
+    .ergonomi-content {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        gap: 3em;
+        max-width: 1350px;
+    }
+
+    .ergonomi-content aside {
+        width: 400px;
+    }
+
+    .ergonomi-content aside h2 {
+        width: 300px;
+        text-align: left;
+    }
+
+    .dont {
+        display: block;
+        width: 250px;
+        margin-top: 5em;
+    }
+
+    .ergonomiIcons {
+        width: 50%;
+        display: block;
+        margin: auto;
+    }
+
+    .tips {
+        width: 400px;
+        display: block;
+        margin: auto;
+    }
+
+    /* optimal stander section */
+
+    .optimal p {
+        width: 400px;
+        display: block;
+        margin: auto;
+    }
+
+    .design-menu {
+        gap: 6em;
+    }
+
+    /* design knap med gif lille stander */
+    .lille-stander-btn {
+        height: 200px;
+        width: 200px;
+    }
+
+
+    /* design knap med gif stor stander */
+    .stor-stander-btn {
+        height: 200px;
+        width: 200px;
+    }
+
+    /* stander content */
+
+
+    .standerText {
+        padding: 0 1em;
+        display: block;
+        margin: auto;
+        width: 524px;
+    }
+
+
+    .stander-billeder {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5em;
+        width: 524px;
+        margin: auto;
+    }
+
+    .stander-billeder img {
+        margin: 0;
+        width: 250px;
+    }
+
+    .stander-videoer {
+        padding: 1em;
+    }
+
+    .stander-videoer video {
+        width: 524px;
+        display: block;
+        margin: 1.25em auto;
+    }
+
+    .stander-videoer img {
+        width: 524px;
+        display: block;
+        margin: 1.25em auto;
+    }
+
+    /* farver section */
+
+
+    .farver p {
+        width: 400px;
+        margin: auto;
+        padding-bottom: 2em;
+    }
+
+    .farver .stander-billeder {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    /* ============================================ Kontakt ============================================ */
+
+    .historienBag {
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+        align-content: center;
+        gap: 3em;
+        width: 100%;
+        padding: 3em 0 0 0;
+    }
+
+    .historienBag aside {
+        width: 450px;
+    }
+
+    .historienBag aside h2 {
+        text-align: left;
+        padding: 0;
+    }
+
+    .historieBilleder {
+        width: 250px;
+        display: block;
+    }
+
+    .mvv p {
+        width: 400px;
+        display: block;
+        margin: auto;
+    }
+
+
+
+    /* ============================================ Footer ============================================ */
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "logos logos"
+            "mere adresse";
+    }
+
+    .mereInfo {
+        display: block;
+        margin: 2em auto;
+        width: 290px;
+        grid-area: mere;
+        text-align: left;
+    }
+
+
+    .footerSocials {
+        justify-content: flex-start;
+        gap: 1em;
+    }
+
+    .footer-FB {
+        margin: 0;
+    }
+
+    .footer-IG {
+        margin: 0;
+    }
+
+
+    .footerLogos {
+        width: 100%;
+        display: block;
+        margin: auto;
+        grid-area: logos;
+    }
+
+
+    .footerAdress {
+        margin: 2em auto 0 auto;
+        padding: 0;
+        text-align: right;
+    }
+
+
+}
+
+/*------------------------------------------------------------------------- */
+/*------------------------------------------Labtop------------------------ */
+/*------------------------------------------------------------------------- */
+
+
+@media screen and (min-width: 1050px) {
+
+    h2 {
+        text-align: center;
+    }
+
+    #tilTop {
+        display: none !important;
+    }
+
+
+    /* ------------------------- NavigationLaptop ------------------------- */
+    header {
+        padding: 0.5em 0;
+        height: 70px;
+        align-items: center;
+    }
+
+    .headerLogo {
+        align-self: center;
+    }
+
+    .navbar {
+        margin: 0 1.8em;
+        padding: 0;
+        height: 60px;
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+        position: inherit;
+        max-width: 1500px;
+    }
+
+
+    .nav-link {
+        /*Hover effect*/
+        transition: 0.1s ease;
+    }
+
+    .navOpdeler {
+        display: block;
+    }
+
+    .navOpdeler img {
+        width: 30px;
+        opacity: 50%;
+        padding: 0;
+        margin: 0 -1em;
+    }
+
+    .nav-link:hover {
+        /*Hover effect*/
+        color: var(--c6);
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+
+    nav .current {
+        font-weight: 700;
+        color: var(--c6);
+        text-decoration: underline;
+    }
+
+    #eksraNav {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        gap: 3em;
+
+    }
+
+    #shopbtn {
+        display: block;
+        height: 34px;
+        width: 105px;
+        border-radius: 100px;
+        border: none;
+        background-color: var(--c6);
+        font-size: 16pt;
+        font-weight: 500;
+        color: var(--c5);
+        text-align: center;
+        text-decoration: none;
+        padding: 2px 0 0 0;
+    }
+
+    #shopbtn:hover {
+        box-shadow: 0 3px 10px var(--c6);
+    }
+
+    .shopping {
+        display: flex;
+        align-items: center;
+        height: 70px;
+    }
+
+
+    .basket {
+        height: 40px;
+        width: 40px;
+        margin: 10px;
+        background-image: url(../img/basket-gray.png);
+        background-size: contain;
+    }
+
+    .basket:hover {
+        background-image: url(../img/basket-green.png);
+    }
+
+    .navSocials {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-FB {
+        height: 30px;
+        width: 30px;
+        margin: 0 0 5px 0;
+        background-image: url(../img/FB-gray.png);
+        background-size: contain;
+    }
+
+    .nav-FB:hover {
+        background-image: url(../img/FB-green.png);
+    }
+
+    .nav-IG {
+        height: 30px;
+        width: 30px;
+        margin: 5px 0 0 0;
+        background-image: url(../img/IG-gray.png);
+        background-size: contain;
+    }
+
+    .nav-IG:hover {
+        background-image: url(../img/IG-green.png);
+    }
+
+    .highlight {
+        display: none;
+    }
+
+    .headerLogo {
+        height: 60px;
+    }
+
+    /* ------------------------- PAGE STYLING ------------------------- */
+    .page {
+        min-height: calc(100vh - 86px);
+        padding: 86px 0em 50px 0em;
+
+    }
+
+    /* ------------------------- FORSIDE ------------------------- */
+
+    .heroFrame {
+        height: 30em;
+        width: 100%;
+        padding: 0;
+        margin: -2em 0 0 0;
+        background-image: url(../img/heroDesktopFrame.gif);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .fragtBanner {
+        margin: -22% -9.5em 0 0;
+        height: 90px;
+        width: 500px;
+    }
+
+    .fragtBanner p {
+        font-size: 18pt;
+        margin: 14px 0 0 0;
+    }
+
+    .lilleFragtText {
+        font-size: 18px !important;
+        margin: -0.1em 0 0 0 !important;
+        font-weight: 100 !important;
+    }
+
+    .heroText {
+        display: block;
+        z-index: 9;
+        position: absolute;
+        top: 4em;
+        left: 8em;
+        padding: 0 1em;
+        width: 500px;
+    }
+
+    .heroText h1 {
+        font-size: 5em;
+        text-align: left;
+        color: var(--c5);
+        font-family: 'Caveat', cursive;
+    }
+
+    .heroText p {
+        color: var(--c5);
+        font-size: 18pt;
+        margin-top: -3.5em;
+    }
+
+    .herotextUnderside {
+        display: none;
+    }
+
+    .holdning {
+        padding: 0 1em;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        grid-template-rows: 0.1fr 2fr 0.1fr;
+        gap: 0px;
+        grid-template-areas:
+            "gif overskrift"
+            "gif text"
+            "gif knapper";
+        max-width: 1350px;
+        margin: auto;
+    }
+
+    .overskrift {
+        grid-area: overskrift;
+        margin-top: 1em;
+        margin: 2.5em 0 0 0em;
+        font-size: 2em;
+        width: 400px;
+
+    }
+
+    .forsideGif {
+        grid-area: gif;
+        width: 500px;
+        align-self: center;
+
+    }
+
+    .text {
+        grid-area: text;
+        margin: 2em 0 0 0em;
+        width: 600px;
+    }
+
+    button {
+        width: 150px;
+        height: 50px;
+        font-size: 18pt;
+    }
+
+    .knapper {
+        grid-area: knapper;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1em;
+        padding: 0em 1em;
+        margin: -120px 0 3em 0;
+        width: 570px;
+    }
+
+    .bambusCharts {
+        display: flex;
+        justify-content: center;
+        gap: 5em;
+        max-width: 1350px;
+        margin: auto;
+    }
+
+    .softEdgeTop {
+        height: 100px;
+    }
+
+    .softEdgeBottom {
+        height: 100px;
+    }
+
+    .bambusKasse h2 {
+        text-align: center;
+        margin-bottom: 2em;
+    }
+
+    .bambusCharts img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .bambusCharts p {
+        width: 400px;
+        display: block;
+        margin: 1em auto;
+    }
+
+    .maerker {
+        margin: 0;
+    }
+
+    .maerker img {
+        margin: 1.5em;
+        margin: 1em auto;
+    }
+
+    .satifikater {
+        display: flex;
+        justify-content: center;
+        gap: 5em;
+    }
+
+    .satifikater p {
+        width: 268px;
+        align-self: center;
+        padding: 0;
+    }
+
+    .bambusKasse .knap2 {
+        margin: 0;
+        display: block;
+        margin: auto;
+        font-size: 16pt;
+    }
+
+    .slid {
+        height: 293px;
+        width: 300px;
+        padding-bottom: 7px;
+    }
+
+    .satifikater aside {
+        width: 400px;
+    }
+
+    .fremvisningsGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "fig1 fig1 fig2"
+            "fig3 fig4 fig4";
+        gap: 1.5em;
+        padding: 2em;
+        max-width: 1350px;
+        margin: auto;
+    }
+
+    .produktFremvisning h2 {
+        padding: 75px 0 40px 0;
+    }
+
+    .billede1 {
+        grid-area: fig2;
+    }
+
+    .billede2 {
+        grid-area: fig1;
+    }
+
+    .billede3 {
+        grid-area: fig3;
+    }
+
+    .billede4 {
+        grid-area: fig4;
+    }
+
+    .fremvisningsGrid figure {
+        height: 500px;
+        margin: 0;
+        box-shadow: 3px 3px 10px var(--c3);
+    }
+
+    .figcaption-fremvisning {
+        top: 388px;
+        font-size: 1.3em;
+        height: 50px;
+        padding: 2em 2em 1em 1em;
+        background-image: linear-gradient(#2d3f3700, #2d3f37ea);
+    }
+
+    .fremText {
+        font-size: 1.5em;
+    }
+
+    .samarbejde {
+        padding-top: 4em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.1fr 0.5fr 0.5fr;
+        grid-template-areas:
+            "overskrift billeder"
+            "text billeder"
+            "knap billeder";
+    }
+
+    .samarbejde h2 {
+        margin: 0;
+        text-align: left;
+        grid-area: overskrift;
+        padding-bottom: 0.5em;
+        align-self: flex-end;
+    }
+
+    .samarbejde p {
+        grid-area: text;
+        width: 550px;
+    }
+
+    .reCollectorBilleder {
+        grid-area: billeder;
+    }
+
+    .ReProduktBilleder {
+        width: 300px;
+    }
+
+    .reLogo {
+        grid-area: knap;
+        margin: 5em 0;
+
+    }
+
+    .samarbejde .knap1 {
+        margin: 5em 6em;
+        grid-area: knap;
+        width: 60%;
+    }
+
+    .samarbejde .knap1:hover {
+        color: var(--c5);
+        box-shadow: 0 3px 10px var(--c6);
+    }
+
+    .anmeldelser h2 {
+        margin: 2em auto 0 auto;
+
+    }
+
+    .instaFeed h2 {
+        margin: 2em auto 0 auto;
+    }
+
+
+
+    /* ============================================ Design ============================================ */
+
+    .storHeroVideoDesign {
+        display: block;
+        width: 100%;
+        margin-top: -2em;
+    }
+
+    .lilleHeroVideoDesign {
+        display: none;
+    }
+
+    /* Få naturen med hjem section */
+
+    .tagNaturenMedHjem {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        align-content: center;
+        padding: 0;
+        margin: 3em auto;
+        max-width: 1350px;
+    }
+
+    .tagNaturenMedHjem aside {
+        width: 550px;
+        margin: auto 1em auto 0;
+    }
+
+    .tagNaturenMedHjem aside h2 {
+        text-align: left;
+        padding: 0;
+    }
+
+    .rundtBillede {
+        width: 350px;
+        height: 350px;
+        display: block;
+        margin: auto 0 auto 1em;
+    }
+
+    /* ergonomi section */
+    .ergonomi {
+        padding: 0 1em;
+        margin: 8em auto 3em auto;
+        max-width: 1350px;
+    }
+
+    .ergonomi-content {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        gap: 3em;
+        max-width: 1350px;
+        margin: auto;
+    }
+
+    .ergonomi-content aside {
+        width: 550px;
+        align-self: center;
+    }
+
+    .ergonomi-content aside h2 {
+        text-align: left;
+        padding: 0;
+    }
+
+    .dont {
+        display: block;
+        width: 350px;
+    }
+
+    .tipsFlexbox {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        gap: 5em;
+    }
+
+    .ergonomiIcons {
+        width: 70%;
+        display: block;
+    }
+
+    .tips {
+        width: 300px;
+        display: block;
+    }
+
+    /* optimal stander section */
+
+    .optimal p {
+        width: 500px;
+        display: block;
+        margin: auto;
+    }
+
+    .design-menu {
+        gap: 6em;
+        justify-content: space-around;
+        max-width: 1350px;
+        margin: 4em auto;
+    }
+
+    .design-menu h6 {
+        font-size: 1.5em;
+        margin: 0.5em 0 1em 0;
+    }
+
+    /* design knap med gif lille stander */
+    .lille-stander-btn {
+        height: 350px;
+        width: 350px;
+    }
+
+
+    /* design knap med gif stor stander */
+    .stor-stander-btn {
+        height: 350px;
+        width: 350px;
+    }
+
+    /* stander content */
+    .stander-indhold {
+        max-width: 1350px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1.5fr 0.5fr 0.5fr;
+        grid-template-areas:
+            "billeder texten"
+            "video video"
+            "knap knap";
+    }
+
+    .standerText {
+        grid-area: texten;
+        padding: 0;
+        display: block;
+        margin: auto;
+        width: 524px;
+    }
+
+    .standerText h2 {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .standerText li {
+        padding: 0;
+    }
+
+    .stander-billeder {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5em;
+        width: 524px;
+        margin: auto;
+        grid-area: billeder;
+    }
+
+    .stander-billeder img {
+        margin: 0;
+        width: 250px;
+    }
+
+    .stander-videoer {
+        max-width: 1350px;
+        grid-area: video;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        margin: 0.5em 0 0 0;
+    }
+
+    .stander-videoer video {
+        width: 524px;
+        display: block;
+    }
+
+    .stander-videoer img {
+        width: 524px;
+        display: block;
+    }
+
+    .knapKnap {
+        grid-area: knap;
+        margin: 3em auto 0 auto;
+    }
+
+    .inspirationen {
+        grid-area: video;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .inspirationen aside {
+        width: 524px;
+        display: flex;
+        justify-content: space-between;
+        margin: 1.5em 0;
+    }
+
+    .inspirationen img {
+        width: 250px;
+    }
+
+    /* farve section */
+    .farver {
+        max-width: 1350px;
+        margin: 8em auto 4em auto;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .farver h2 {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .farveText {
+        align-self: center;
+    }
+
+    .farver .stander-billeder {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .farver img {
+        width: 250px;
+    }
+
+    /* ============================================ Kontakt ============================================ */
+
+    .historienBag {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        align-content: center;
+        padding: 0;
+        margin: 3em auto;
+        max-width: 1350px;
+    }
+
+    .historienBag aside {
+        width: 550px;
+        margin: auto 1em auto 0;
+    }
+
+    .historienBag aside h2 {
+        text-align: left;
+        padding: 0;
+    }
+
+    .kontakt-content {
+        max-width: 1350px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .historieBilleder {
+        width: 100%;
+        display: block;
+    }
+
+    .mvv p {
+        width: 524px;
+        display: block;
+        margin: auto;
+    }
+
+    .mvv h2 {
+        text-align: left;
+    }
+
+    /* ============================================ 404 ============================================ */
+
+
+
+    #error img {
+        width: 20%;
+        display: block;
+        margin: auto;
+    }
+
+
+    /* ============================================ Footer ============================================ */
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "mere logos adresse";
+    }
+
+    hr {
+        display: none;
+    }
+
+    .mereInfo {
+        display: block;
+        margin: 7em 1.8em 0 1.8em;
+        text-align: left;
+    }
+
+
+    .footerSocials {
+        justify-content: flex-start;
+        gap: 1em;
+    }
+
+    .footer-FB {
+        margin: 0 0em;
+    }
+
+    .footer-IG {
+        margin: 0 0em;
+    }
+
+
+    .footerAdress {
+        margin: 7em 1.8em 0 auto;
+        padding: 0;
+        grid-area: adresse;
+        text-align: right;
+    }
+
+    .betaling {
+        margin-bottom: 2em;
+    }
+
+
+}
